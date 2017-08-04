@@ -14,12 +14,14 @@ int main() {
 
   while (c != '\n') {
     scanf("%c", &c);
-    if ((word == 0) && ((c != ' ') && (c != '\n'))){
-    	word = 1;
+    if ((word == 0) && ((97<=c && c <= 122) || (65<= c && c<=90) || (48<=c && c <=57)) ){
+    	word = 1;    	
     	cont ++;
     }
-    else if ((word == 1) && (c == ' ')){
-    	word = 0;
+    else if (word == 1){
+    	if (c == ' '){
+    		word = 0;    		
+    	}    	
     }
   }
 
