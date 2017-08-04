@@ -9,14 +9,20 @@
 
 int main() {
 
-  char c;
-
-  c = 1;
+  char c = 0;
+  int cont = 0, word = 0;  
 
   while (c != '\n') {
     scanf("%c", &c);
+    if ((word == 0) && ((c != ' ') && (c != '\n'))){
+    	word = 1;
+    	cont ++;
+    }
+    else if ((word == 1) && (c == ' ')){
+    	word = 0;
+    }
   }
 
-  printf("1\n");
+  printf("%d\n", cont);
   return 0;
 }
